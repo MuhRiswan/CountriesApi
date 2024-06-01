@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 
-const page = () => {
+const Page = () => {
   const { name } = useParams();
 
   const [loaoding, setLoading] = React.useState(false);
@@ -127,4 +127,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
