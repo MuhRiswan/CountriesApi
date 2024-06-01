@@ -3,19 +3,19 @@ import { api } from "@/app/api/api";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import React from "react";
+import { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 
-const Page = () => {
+export default function Page() {
   const { name } = useParams();
 
-  const [loaoding, setLoading] = React.useState(false);
+  const [loaoding, setLoading] = useState(false);
 
-  const [country, setCountry] = React.useState<any>([]);
+  const [country, setCountry] = useState<any>([]);
 
-  const [currencyCountry, setCurrencyCountry] = React.useState<any>([]);
+  const [currencyCountry, setCurrencyCountry] = useState<any>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (name) {
       getCountry(name);
       // getCurrencyCountry(name);
@@ -125,6 +125,4 @@ const Page = () => {
       )}
     </div>
   );
-};
-
-export default Page;
+}
